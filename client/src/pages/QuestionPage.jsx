@@ -59,22 +59,22 @@ const QuestionPage = ({data,onDataChange,onVectorChange}) =>
                     className={`text-2xl px-2 py-2 hover:cursor-pointer border-2 rounded-xl border-gray-500      hover:bg-slate-800`}>{unit}</button>
                 ))}
                 </div>
-                {tensor && (
+                {/* {tensor && (
                     <div className="">
-                        {tensor && <div className="flex flex-col"> <p> Tensor:</p>
+                        
                         {tensor.map((value, index) => (
 
                           
                             <div key={index}>{value} </div>
                         ))}
-                        </div>}
+                        
                         
                     </div>
-                )}
-                {prediction && <p>Prediction: {prediction}</p>}
+                )} */}
+                {/* {prediction && <p>Prediction: {prediction}</p>} */}
                <div className="flex justify-between">
                 <button onClick={handleSubmit} type="button" className=' text-xl flex justify-center items-center gap-2 text-white hover:text-red-800'>Submit</button>
-                <button onClick={handleResult} type="button" className=' text-xl flex justify-center items-center gap-2 text-white hover:text-red-800'>Result</button>
+                {prediction && <button onClick={handleResult} type="button" className=' text-xl flex justify-center items-center gap-2 text-white hover:text-red-800'>Result</button>}
                 </div> 
               </div>)
                 

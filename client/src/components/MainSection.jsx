@@ -25,7 +25,7 @@ const MainSection = () => {
   const [vectorchild, setVectorchild] = useState([]);
   const handleDataChange = (childData) => {
     setDataFromChild(childData);
-    
+    <Navigate to="/report" />
   };
 
   const handlevectorData = (childData) => {
