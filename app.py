@@ -1,15 +1,16 @@
 from flask import Flask, request, jsonify
-import pandas as pd
 import torch
 from transformers import BertForSequenceClassification, BertTokenizerFast, pipeline
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 # Set up model and pipeline
 gpu = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 torch.cuda.set_per_process_memory_fraction(0.9)
 
-model_path = "model/8model"
+model_path = "model/8.model"
 model = BertForSequenceClassification.from_pretrained(model_path)
 tokenizer = BertTokenizerFast.from_pretrained(model_path)
 nlp = pipeline("feature-extraction", model=model, tokenizer=tokenizer, device=gpu)
@@ -32,7 +33,7 @@ def predict():
         mental_health = id2labels[max_index]
 
         # Return prediction
-        return jsonify({'prediction': mental_health})
+        return jsonify({'prediction': mental_health, 'tensor': values_tensor[0].tolist()})
 
     except Exception as e:
         return jsonify({'error': str(e)})
