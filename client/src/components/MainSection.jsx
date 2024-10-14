@@ -2,7 +2,7 @@
 import { useEffect ,useState } from 'react';
 import { Header, Footer, Sidebar, MobileMenu } from '.';
 import { Route, Routes, useLocation } from 'react-router-dom';
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Home, Login, Signup, NoMatch, Lessons, Characters, Report, Profile, QuizPage ,QuestionPage ,Aipage } from '../pages';
 
 import Auth from '../utils/auth';
@@ -15,7 +15,7 @@ const MainSection = () => {
   const quizLocation = useLocation().pathname.includes('/quiz');
   
   const { pathname } = useLocation();
-
+  const navigate = useNavigate();
   useEffect(() => {
     // Scroll to the top of the page on route change
     window.scrollTo(0, 0);
@@ -25,7 +25,7 @@ const MainSection = () => {
   const [vectorchild, setVectorchild] = useState([]);
   const handleDataChange = (childData) => {
     setDataFromChild(childData);
-    <Navigate to="/report" />
+    navigate('/report');
   };
 
   const handlevectorData = (childData) => {

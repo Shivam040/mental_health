@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Navigate } from 'react-router-dom';
 const QuestionPage = ({data,onDataChange,onVectorChange}) => 
     {
         const [output,setOutput]=useState([]);
@@ -16,6 +17,7 @@ const QuestionPage = ({data,onDataChange,onVectorChange}) =>
             console.log("in function",prediction)
              onDataChange(prediction);
              onVectorChange(tensor); // Send data to the parent
+             <Navigate to="/report" />
            };
 
            
@@ -56,7 +58,7 @@ const QuestionPage = ({data,onDataChange,onVectorChange}) =>
                     {data[0].lessonUnits[0].unitContent.map((unit) => (
                     <button
                     onClick={() => handleClick(unit)} 
-                    className={`text-2xl px-2 py-2 hover:cursor-pointer border-2 rounded-xl border-gray-500      hover:bg-slate-800`}>{unit}</button>
+                    className={`text-2xl px-2 py-2 hover:cursor-pointer border-2 rounded-xl border-gray-500      hover:border-slate-800`}>{unit}</button>
                 ))}
                 </div>
                 {/* {tensor && (
