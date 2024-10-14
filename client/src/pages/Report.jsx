@@ -1,13 +1,13 @@
 import { Navigate } from "react-router-dom";
 import Auth from "../utils/auth";
 import { AiOutlineLoading } from "react-icons/ai";
-
+import FloatingIcon from "../components/FloatingIcon.jsx";
 import { useQuery } from "@apollo/client";
 import { QUERY_USERS } from "../utils/queries";
 import PieChart from "../components/PieChart.jsx";
 import image1 from "../assets/loneliness.png";
 import { ListItem } from "@mui/material";
-const Report = ({data1,data2}) => {
+const Report = ({data1,data2,data3}) => {
   // If the user is not logged in, redirect to the login page
   if (!Auth.loggedIn()) return <Navigate to="/login" />;
 
@@ -60,6 +60,10 @@ const Report = ({data1,data2}) => {
   ];
 
   const illness = ["anxiety","Normal","Depresson","Bipolar","Polar","Stress","Panic"]
+
+  const handleClick = () => {
+    data3(data1); // Replace with the route you want to redirect to
+};
   return (
     <section id="leaderboard" className="w-full min-h-screen p-4 md:p-8">
       {/* Page Heading */}
@@ -149,6 +153,14 @@ const Report = ({data1,data2}) => {
                 <div key={index}>{illness[index]} = {value} </div> 
                 ))}
 
+        </div>
+        <div
+            className="fixed bottom-5 right-5 p-3 bg-blue-500 text-white rounded-full shadow-lg cursor-pointer hover:bg-blue-600 transition duration-300"
+            onClick={handleClick}
+        >
+            {/* You can replace the text with an actual icon */}
+            
+           <p>Ask AI</p>
         </div>
       </div>
     </section>

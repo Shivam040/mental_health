@@ -17,7 +17,6 @@ const QuestionPage = ({data,onDataChange,onVectorChange}) =>
             console.log("in function",prediction)
              onDataChange(prediction);
              onVectorChange(tensor); // Send data to the parent
-             <Navigate to="/report" />
            };
 
            

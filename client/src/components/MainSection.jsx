@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { Home, Login, Signup, NoMatch, Lessons, Characters, Report, Profile, QuizPage ,QuestionPage ,Aipage } from '../pages';
 
 import Auth from '../utils/auth';
-import { HiraKataKanjiQuiz, VocabQuiz } from '../utils/quizGenerator';
+// import { HiraKataKanjiQuiz, VocabQuiz } from '../utils/quizGenerator';
 import { hiraganaData, katakanaData, kanjiData, lessonData } from '../data';
 
 const MainSection = () => {
@@ -22,10 +22,16 @@ const MainSection = () => {
   }, [pathname]);
 
   const [dataFromChild, setDataFromChild] = useState('');
+  const [dataFromSecond, setDataFromSecond] = useState('');
   const [vectorchild, setVectorchild] = useState([]);
   const handleDataChange = (childData) => {
     setDataFromChild(childData);
     navigate('/report');
+  };
+
+  const handleDatasecond = (childData) => {
+    setDataFromSecond(childData);
+    navigate('/ask');
   };
 
   const handlevectorData = (childData) => {
@@ -63,7 +69,7 @@ const MainSection = () => {
             />
             <Route
               path="/ask"
-              element={<Aipage  />}
+              element={<Aipage data3={dataFromSecond} />}
             />
             {/* <Route
               path="/characters"
@@ -71,7 +77,7 @@ const MainSection = () => {
             /> */}
             <Route
               path="/report"
-              element={<Report data1={dataFromChild} data2={vectorchild} />}
+              element={<Report data1={dataFromChild} data2={vectorchild} data3={handleDatasecond}/>}
             />
              <Route
               path="/checkup/test"

@@ -2,8 +2,20 @@
 
 import React, { useState } from 'react';
 
-const Aipage = () => {
-    const [input, setInput] = useState('');
+const Aipage = ({data3}) => {
+  console.log(data3)
+  const prompt = data3 
+  ? `Our Model has Diagnosed You with ${data3}. 
+     - Precautions to Take
+     - Coping Mechanisms
+     - Self-Care Activities
+     - Daily Habits & Routines
+     - Lifestyle Routines
+     - Stress Management Techniques
+     - Triggers to Avoid`
+  : "";
+    
+    const [input, setInput] = useState(prompt);
     const [response, setResponse] = useState('');
 
     const handleChange = (event) => {
@@ -37,13 +49,13 @@ const Aipage = () => {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
             <h1 className="text-2xl font-bold mb-6">Ask Something Positive</h1>
-            <form onSubmit={handleSubmit} className="w-full max-w-md bg-white rounded-lg shadow-md p-6">
+            <form onSubmit={handleSubmit} className="w-full max-w-xl bg-white rounded-lg shadow-md p-6">
                 <textarea
                     value={input}
                     onChange={handleChange}
                     placeholder="Tell me something positive..."
                     required
-                    className="w-full h-40 p-4 border rounded-md border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full h-56 p-4 border rounded-md border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 <button 
                     type="submit" 
