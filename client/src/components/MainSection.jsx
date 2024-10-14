@@ -3,7 +3,7 @@ import { useEffect ,useState } from 'react';
 import { Header, Footer, Sidebar, MobileMenu } from '.';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
-import { Home, Login, Signup, NoMatch, Lessons, Characters, Report, Profile, QuizPage ,QuestionPage } from '../pages';
+import { Home, Login, Signup, NoMatch, Lessons, Characters, Report, Profile, QuizPage ,QuestionPage ,Aipage } from '../pages';
 
 import Auth from '../utils/auth';
 import { HiraKataKanjiQuiz, VocabQuiz } from '../utils/quizGenerator';
@@ -60,6 +60,10 @@ const MainSection = () => {
             <Route
               path="/checkup"
               element={<Lessons  />}
+            />
+            <Route
+              path="/ask"
+              element={<Aipage  />}
             />
             {/* <Route
               path="/characters"

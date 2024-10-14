@@ -2,7 +2,7 @@ import { HiOutlineHome, HiOutlineUserCircle } from 'react-icons/hi';
 import { IoLanguage } from 'react-icons/io5';
 import { MdOutlineLeaderboard } from 'react-icons/md';
 import { FaGithub } from 'react-icons/fa';
-
+import { GiArtificialIntelligence } from "react-icons/gi";
 const sidebarNavItems = [
   {
     title: 'Check Up',
@@ -23,6 +23,11 @@ const sidebarNavItems = [
     title: 'Profile',
     path: '/profile',
     icon: <HiOutlineUserCircle className="sidebar-btn-icon" />,
+  },
+  {
+    title: 'Ask AI',
+    path: '/ask',
+    icon: <GiArtificialIntelligence className="sidebar-btn-icon" />,
   },
 ];
 

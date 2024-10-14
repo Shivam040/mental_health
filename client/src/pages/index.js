@@ -9,5 +9,5 @@ import Profile from './Profile';
 import QuizPage from './QuizPage';
 import CompleteScreen from './CompleteScreen';
 import QuestionPage from './QuestionPage';
-
-export { Home, Login, Signup, NoMatch, Lessons, Characters, Report, Profile, QuizPage, CompleteScreen,QuestionPage };
+import Aipage from './Aipage';
+export { Home, Login, Signup, NoMatch, Lessons, Characters, Report, Profile, QuizPage, CompleteScreen,QuestionPage,Aipage };

@@ -72,8 +72,10 @@ const QuestionPage = ({data,onDataChange,onVectorChange}) =>
                     </div>
                 )}
                 {prediction && <p>Prediction: {prediction}</p>}
+               <div className="flex justify-between">
                 <button onClick={handleSubmit} type="button" className=' text-xl flex justify-center items-center gap-2 text-white hover:text-red-800'>Submit</button>
                 <button onClick={handleResult} type="button" className=' text-xl flex justify-center items-center gap-2 text-white hover:text-red-800'>Result</button>
+                </div> 
               </div>)
                 
     };
