@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-family: 'Nunito Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.custom-transition {
+  @apply transition-all duration-300 ease-out;
+}
+
+.social-link {
+  @apply w-8 h-8 hover:opacity-60;
+}
+
+.form-container-style {
+  @apply w-full max-w-sm h-fit flex flex-col justify-center items-center bg-white dark:bg-slate-800 px-4 py-8 sm:p-8 rounded-xl shadow-2xl;
+}
+
+.form-input-style {
+  @apply bg-gray-100 dark:bg-slate-900 border-2 border-gray-300 dark:border-slate-700 rounded-xl focus:outline-none focus:border-sky-400 dark:focus:border-sky-400;
+}
+
+.password-input {
+  @apply form-input-style w-full pl-3 pr-12 py-2 overflow-hidden;
+}
+
+.password-show-btn {
+  @apply absolute inset-y-0 right-0 h-fit w-fit my-auto mr-2 p-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700;
+}
+
+.sidebar-btn {
+  @apply p-2 xl:px-4 flex justify-center xl:justify-start items-center font-bold hover:bg-gray-200/75 dark:hover:bg-slate-700 border-2 border-transparent rounded-xl;
+}
+
+.sidebar-btn-icon {
+  @apply h-7 w-7 xl:h-6 xl:w-6 xl:mr-4;
+}
+
+.sidebar-btn.active {
+  @apply bg-red-100 border-2 border-red-300 text-red-500 dark:bg-transparent dark:text-red-400 dark:border-red-400 dark:bg-slate-700;
+}
+
+.sidebar-text {
+  @apply hidden xl:inline-block;
+}
+
+.mobile-btn {
+  @apply w-full p-2 xl:px-4 flex items-center font-bold hover:bg-gray-200/75 dark:hover:bg-slate-700 border-2 border-transparent rounded-xl;
+}
+
+.footer-bg-dark {
+  @apply bg-slate-800 text-gray-300;
+}
+
+.tab-style {
+  @apply w-full py-2 rounded-t-xl border-b-4 border-transparent hover:bg-gray-200/75 dark:hover:bg-slate-700;
+}
+
+.tab-active-style {
+  @apply border-red-500 text-red-500 dark:border-red-400 dark:text-red-400 ;
+}
+
+.h1-style {
+  @apply text-xl font-bold;
+}
+
+.banner-heading {
+  @apply text-4xl font-bold;
+}
+
+.chart-container {
+  @apply grid gap-2 sm:gap-4 text-xl md:text-2xl lg:text-3xl xl:text-4xl text-center font-bold;
+}
+
+.chart-char-container {
+  @apply py-2 flex flex-col rounded-xl shadow-md;
+}
+
+.chart-filled-container {
+  @apply bg-red-100 border-2 border-primary-shade/40 text-red-900 dark:bg-slate-800 dark:text-gray-100 dark:border-gray-700;
+}
+
+.chart-romaji {
+  @apply font-normal text-red-900 dark:text-gray-100 text-sm sm:text-base md:text-lg lg:text-xl italic;
+}
+
+.chart-empty-container {
+  @apply bg-gray-200/75 dark:bg-slate-800;
+}
+
+.chart-break {
+  @apply my-8 border border-gray-300 dark:border-gray-700;
+}
+
+.quiz-main-container {
+  @apply overflow-x-hidden overflow-y-auto grid grid-cols-1 grid-rows-[min-content_minmax(0,_1fr)];
+}
+
+.quiz-btn-style {
+  @apply h-12 w-full md:max-w-[150px] py-2 px-3 font-bold text-lg rounded-xl;
+}
+
+.quiz-stat-container {
+  @apply rounded-xl w-full h-full p-[2px] sm:p-1 overflow-hidden flex flex-col text-sm sm:text-base text-slate-800;
+}
+
+.quiz-stat-body {
+  @apply bg-gray-50 dark:bg-slate-900 rounded-xl py-2 h-16 sm:h-20 flex flex-col justify-center items-center text-base sm:text-xl md:text-2xl;
+}
+
+.banner-bg-style {
+  @apply absolute inset-0 w-full h-full z-0;
+}
+
+.banner-container-style {
+  @apply relative overflow-hidden rounded-xl shadow-lg;
+}
+
+.box-container-style {
+  @apply bg-white dark:bg-slate-800 w-full h-full p-4 rounded-xl shadow-lg;
+}
+
+.ranking-index-style {
+  @apply h-8 w-8 p-2 flex justify-center items-center rounded-full font-bold;
+}
+
+.ranking-first-style {
+  @apply border-2 border-amber-400 bg-amber-200 text-amber-500;
+}
+
+.ranking-second-style {
+  @apply border-2 border-slate-400 bg-slate-200 text-slate-400;
+}
+
+.ranking-third-style {
+  @apply border-2 border-[#D7975D] bg-[#F7BE8B] text-[#CD7900];
+}
+
+.exercise-style {
+  @apply w-full px-3 py-5 bg-gray-800/30 hover:bg-gray-800/50 rounded-xl text-3xl justify-center text-shadow flex items-center;
+}
+
+.selected-choice {
+  @apply bg-sky-200 border-sky-400 dark:bg-sky-700
+}
+
+.correct-choice {
+  @apply bg-[#CEFEA8] text-[#4CAD02] border-lime-500 dark:bg-lime-500 dark:text-lime-900 dark:border-lime-900
+}
+
+.incorrect-choice {
+  @apply bg-[#FED6DD] text-red-500 border-red-300 dark:bg-red-400 dark:text-red-900 dark:border-red-900
+}
+
+/* Backgrounds Start */
+.hero-bg {
+  background-image: url('./assets/waves.svg'), url('./assets/endless-clouds.svg');
+  background-size: 105%, 80px;
+  background-position: bottom, top left;
+  background-repeat: no-repeat, repeat;
+}
+
+.bg-clouds {
+  background: url('./assets/bannerBG/bg-endless-clouds.svg') repeat;
+  background-size: 80px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1));
+  mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1));
+}
+
+.bg-curtain {
+  background: url('./assets/bannerBG/bg-curtain.svg') repeat;
+  background-size: 60px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1));
+  mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1));
+}
+
+.bg-circles {
+  background: url('./assets/bannerBG/bg-circles.svg') repeat;
+  background-size: 60px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1));
+  mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1));
+}
+
+.bg-autumn {
+  background: url('./assets/bannerBG/bg-autumn.svg') repeat;
+  background-size: 80px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1));
+  mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1));
+}
+
+.bg-connections {
+  background: url('./assets/bannerBG/bg-connections.svg') repeat;
+  background-size: 80px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1));
+  mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1));
+}
+
+.bg-parkay-floor {
+  background: url('./assets/bannerBG/bg-parkay-floor.svg') repeat;
+  background-size: 100px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1));
+  mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1));
+}
+
+.bg-i-like-food {
+  background: url('./assets/bannerBG/bg-i-like-food.svg') repeat;
+  background-size: 250px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2));
+  mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2));
+}
+
+.bg-groovy {
+  background: url('./assets/bannerBG/bg-groovy.svg') repeat;
+  background-size: 30px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1));
+  mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1));
+}
+
+.bg-signal {
+  background: url('./assets/bannerBG/bg-signal.svg') repeat;
+  background-size: 100px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1));
+  mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1));
+}
+
+.bg-bathroom-floor {
+  background: url('./assets/bannerBG/bg-bathroom-floor.svg') repeat;
+  background-size: 100px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2));
+  mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2));
+}
+
+.bg-bamboo {
+  background: url('./assets/bannerBG/bg-bamboo.svg') repeat;
+  background-size: 30px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.07));
+  mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.07));
+}
+
+.bg-jigsaw {
+  background: url('./assets/bannerBG/bg-jigsaw.svg') repeat;
+  background-size: 150px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2));
+  mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2));
+}
+
+.bg-leaf {
+  background: url('./assets/bannerBG/bg-leaf.svg') repeat;
+  background-size: 100px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1));
+  mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1));
+}
+/* Backgrounds End */
+
+.text-shadow {
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
