@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 // import darkmode action
 import { TOGGLE_DARKMODE } from '../features/darkMode/darkModeSlice';
 
-import logo from '../assets/SakuraStudyLogo.svg';
+import logo from '../assets/logo.png';
 import logoText from '../assets/SakuraStudyTextBlack.svg';
 import logoTextDarkMode from '../assets/SakuraStudyTextWhite.svg';
 import { HiOutlineMoon, HiOutlineSun } from 'react-icons/hi';
@@ -18,7 +18,7 @@ const Header = () => {
 
   return (
     <header className="bg-white dark:bg-slate-800 border-b border-gray-100 dark:border-gray-900 z-50">
-      <nav className="mx-auto max-w-7xl flex items-center justify-between p-4 lg:px-8">
+      <nav className="mx-auto max-w-7xl flex items-center justify-between p-0 lg:px-8">
         {/* Logo image */}
         {/* <Link
           to="/"
@@ -27,7 +27,7 @@ const Header = () => {
           <img
             src={logo}
             alt="Logo"
-            className="w-10 h-10"
+            className="w-20 h-20"
           />
           {/* Show dark mode logo if dark mode is enabled */}
           {/* {darkMode ? (

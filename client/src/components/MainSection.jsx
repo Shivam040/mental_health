@@ -81,7 +81,7 @@ const MainSection = () => {
               path="/profile"
               element={<Profile />}
             />
-            <Route path="/quiz">
+            {/* <Route path="/quiz">
               <Route
                 path="hiragana"
                 element={
@@ -137,7 +137,7 @@ const MainSection = () => {
                   </Route>
                 ))}
               </Route>
-            </Route>
+            </Route> */}
             <Route
               path="*"
               element={<NoMatch />}

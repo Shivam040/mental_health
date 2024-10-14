@@ -62,7 +62,7 @@ const Characters = () => {
       {/* Content */}
       <div>
         {/* Start Quiz Button for Hiragana and Katakana */}
-        {(activeTab === 'Hiragana' || activeTab === 'Katakana') && (
+        {/* {(activeTab === 'Hiragana' || activeTab === 'Katakana') && (
           <div className="mb-8 flex justify-center sm:justify-start">
             <Link
               to={`/quiz/${activeTab.toLowerCase()}`}
@@ -71,7 +71,7 @@ const Characters = () => {
               Start {activeTab} Quiz
             </Link>
           </div>
-        )}
+        )} */}
 
         <div>{chartComponent[activeTab]}</div>
       </div>

@@ -2,6 +2,7 @@ import { Navigate } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
 import Auth from '../utils/auth';
+import { useState } from 'react';
 
 import { LessonContainer } from '../components';
 import { lessonData } from '../data';
@@ -14,6 +15,28 @@ const Lessons = () => {
   const { data } = useQuery(QUERY_ME);
   // set the user's data to a variable
   const user = data?.me || {};
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const faqData = [
+    {
+      question: "What is Tailwind CSS?",
+      answer:
+        "Tailwind CSS is a utility-first CSS framework for rapidly building custom user interfaces.",
+    },
+    {
+      question: "How does Tailwind work?",
+      answer:
+        "Tailwind works by providing a large set of utility classes that you can apply directly to HTML elements to style them.",
+    },
+    {
+      question: "Can I customize Tailwind?",
+      answer:
+        "Yes, Tailwind is fully customizable. You can customize the design system by modifying the default configuration.",
+    },
+  ];
+  const toggleOpen = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   return (
     <section
@@ -42,6 +65,27 @@ const Lessons = () => {
           />
         ))}
       </div>
+      <div className="w-full   mt-10 justify-center">
+        {faqData.map((faq, index) => (
+          <div
+            key={index}
+            className={`bg-orange-200 w-[630px] md:w-full py-2 px-2 rounded-lg shadow-md cursor-pointer transition-transform duration-300 ease-in-out transform ${
+              openIndex === index ? "" : "hover:-translate-y-1"
+            }`}
+            onClick={() => toggleOpen(index)}
+          >
+            {/* Question */}
+            <h3 className="text-lg font-bold text-gray-800">{faq.question}</h3>
+
+            {/* Answer */}
+            {openIndex === index && (
+              <div className="mt-2 text-gray-600">
+                <p>{faq.answer}</p>
+              </div>
+            )}
+          </div>
+        ))}
+</div>
     </section>
   );
 };

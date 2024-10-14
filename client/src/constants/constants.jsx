@@ -20,15 +20,16 @@ const sidebarNavItems = [
     icon: <MdOutlineLeaderboard className="sidebar-btn-icon" />,
   },
   {
-    title: 'Profile',
-    path: '/profile',
-    icon: <HiOutlineUserCircle className="sidebar-btn-icon" />,
-  },
-  {
     title: 'Ask AI',
     path: '/ask',
     icon: <GiArtificialIntelligence className="sidebar-btn-icon" />,
   },
+  {
+    title: 'Profile',
+    path: '/profile',
+    icon: <HiOutlineUserCircle className="sidebar-btn-icon" />,
+  },
+  
 ];
 
 const socialLinks = [

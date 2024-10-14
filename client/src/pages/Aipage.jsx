@@ -4,8 +4,9 @@ const Aipage = () => {
   const name = "World";
 
   return (
-    <div className='h-screen'>
-      <h1>Hello, {name}!</h1>
+    <div className='h-screen flex  justify-center items-center text-3xl'>
+
+      <h1 className='font-bold'>Your AI will be here Soon!!!</h1>
     </div>
   );
 };

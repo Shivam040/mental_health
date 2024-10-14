@@ -58,7 +58,7 @@ const QuestionPage = ({data,onDataChange,onVectorChange}) =>
                     {data[0].lessonUnits[0].unitContent.map((unit) => (
                     <button
                     onClick={() => handleClick(unit)} 
-                    className={`text-2xl px-2 py-2 hover:cursor-pointer border-2 rounded-xl border-gray-500      hover:border-slate-800`}>{unit}</button>
+                    className={`text-2xl px-2 py-2 hover:cursor-pointer border-2 rounded-xl border-gray-500  hover:border-slate-800`}>{unit}</button>
                 ))}
                 </div>
                 {/* {tensor && (
@@ -75,8 +75,8 @@ const QuestionPage = ({data,onDataChange,onVectorChange}) =>
                 )} */}
                 {/* {prediction && <p>Prediction: {prediction}</p>} */}
                <div className="flex justify-between">
-                <button onClick={handleSubmit} type="button" className=' text-xl flex justify-center items-center gap-2 text-white hover:text-red-800'>Submit</button>
-                {prediction && <button onClick={handleResult} type="button" className=' text-xl flex justify-center items-center gap-2 text-white hover:text-red-800'>Result</button>}
+                <button onClick={handleSubmit} type="button" className=' text-xl flex justify-center items-center gap-2 text-black hover:text-red-800'>Submit</button>
+                {prediction && <button onClick={handleResult} type="button" className=' text-xl flex justify-center items-center gap-2 text-black hover:text-red-800'>Result</button>}
                 </div> 
               </div>)
                 

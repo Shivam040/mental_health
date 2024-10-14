@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { Link, Navigate } from 'react-router-dom';
-import logo from '../assets/SakuraStudyLogo.svg';
+import logo from '../assets/logo.png';
 import { HiEye, HiEyeOff } from 'react-icons/hi';
 import { FaExclamationCircle } from 'react-icons/fa';
 import { AiOutlineLoading } from 'react-icons/ai';
