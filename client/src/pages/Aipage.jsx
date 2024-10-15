@@ -1,7 +1,6 @@
 
 
 import React, { useState } from 'react';
-import Scene from '../components/Scene';
 
 const Aipage = ({data3}) => {
   console.log(data3)
@@ -48,8 +47,6 @@ const Aipage = ({data3}) => {
 
     
     return (
-        <div className='flex flex-col'>
-           
         <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
             <h1 className="text-2xl font-bold mb-6">Ask Something Positive</h1>
             <form onSubmit={handleSubmit} className="w-full max-w-xl bg-white rounded-lg shadow-md p-6">
@@ -62,19 +59,17 @@ const Aipage = ({data3}) => {
                 />
                 <button 
                     type="submit" 
-                    className="mt-4 w-full bg-gradient-to-r from-[#028090] to-[#00a896]  text-white font-semibold py-2 rounded-md hover:bg-blue-600 transition duration-200"
+                    className="mt-4 w-full bg-blue-500 text-white font-semibold py-2 rounded-md hover:bg-blue-600 transition duration-200"
                 >
                     Submit
                 </button>
             </form>
             {response && (
-                <div className="mt-6 p-4 bg-[#02c39a] border border-green-400 text-white rounded-md">
+                <div className="mt-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-md">
                     <h2 className="text-lg font-semibold">Response:</h2>
                     <p>{response}</p>
                 </div>
             )}
-        </div>
-       
         </div>
     );
 };
