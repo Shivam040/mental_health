@@ -14,7 +14,7 @@ const QuestionPage = ({data,onDataChange,onVectorChange}) =>
           };
 
            const handleResult = () => {
-            console.log("in function",prediction)
+            // console.log("in function",prediction)
              onDataChange(prediction);
              onVectorChange(tensor); // Send data to the parent
            };
@@ -36,6 +36,7 @@ const QuestionPage = ({data,onDataChange,onVectorChange}) =>
               });
         
               const result = await response.json();
+              console.log("in function",result.prediction)
               setPrediction(result.prediction);
               setTensor(result.tensor);
               
@@ -48,9 +49,9 @@ const QuestionPage = ({data,onDataChange,onVectorChange}) =>
           };
 
 
-        console.log(output)
+        // console.log(output)
        
-        console.log(singleString)
+        // console.log(singleString)
         return(<div className="h-full px-10"> 
                 <h1 className='font-bold text-xl sm:text-2xl md:text-4xl text-center py-10' >Select What You Feel</h1>
                 <div className="flex gap-5 flex-col ">

@@ -7,10 +7,11 @@ import { QUERY_USERS } from "../utils/queries";
 import PieChart from "../components/PieChart.jsx";
 import image1 from "../assets/loneliness.png";
 import { ListItem } from "@mui/material";
+import { useState } from "react";
 const Report = ({data1,data2,data3}) => {
   // If the user is not logged in, redirect to the login page
   if (!Auth.loggedIn()) return <Navigate to="/login" />;
-
+  const  [ tensordata ,setTensordata] = useState([]);
   // get the user data from the server
   const { loading, data } = useQuery(QUERY_USERS);
 
@@ -64,6 +65,8 @@ const Report = ({data1,data2,data3}) => {
   const handleClick = () => {
     data3(data1); // Replace with the route you want to redirect to
 };
+
+
   return (
     <section id="leaderboard" className="w-full min-h-screen p-4 md:p-8">
       {/* Page Heading */}

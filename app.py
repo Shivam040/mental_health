@@ -20,7 +20,7 @@ tokenizer = BertTokenizerFast.from_pretrained(model_path)
 nlp = pipeline("feature-extraction", model=model, tokenizer=tokenizer)   #, device=gpu
 
 
-id2labels = {0: 'Anxiety', 1: 'Normal', 2: 'Depression', 3: 'Depression', 4: 'Stress', 5: 'Bipolar', 6: 'Personality disorder'}
+id2labels = {0: 'Anxiety', 1: 'Normal', 2: 'Depression', 3: 'Depression' , 4: 'Stress', 5: 'Bipolar', 6: 'Personality disorder'}
 
 
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
@@ -40,11 +40,18 @@ def predict():
         # Process input with the model pipeline
         values = nlp(user_input, truncation=True, padding=True)
         values_tensor = torch.tensor(values)
+        values_tensor = torch.clamp(values_tensor, min = 0)
+
+        
+        # tensor_min = torch.min(values_tensor)
+        # tensor_max = torch.max(values_tensor)
+        # values_tensor =  (values_tensor - tensor_min) / (tensor_max - tensor_min)
         max_index = values_tensor[0].argmax().item()
 
+        print(type(values_tensor))
+        print(values_tensor)
         # Get prediction label
         mental_health = id2labels[max_index]
-
         # Return prediction
         return jsonify({'prediction': mental_health, 
                         'tensor': values_tensor[0].tolist(),
