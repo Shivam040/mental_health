@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html {
-  font-family: "Nunito Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Nunito Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .custom-transition {
@@ -53,7 +53,7 @@ html {
 }
 
 .footer-bg-dark {
-  @apply bg-[#028090] text-gray-300;
+  @apply bg-slate-800 text-gray-300;
 }
 
 .tab-style {
@@ -61,7 +61,7 @@ html {
 }
 
 .tab-active-style {
-  @apply border-red-500 text-red-500 dark:border-red-400 dark:text-red-400;
+  @apply border-red-500 text-red-500 dark:border-red-400 dark:text-red-400 ;
 }
 
 .h1-style {
@@ -145,165 +145,113 @@ html {
 }
 
 .selected-choice {
-  @apply bg-sky-200 border-sky-400 dark:bg-sky-700;
+  @apply bg-sky-200 border-sky-400 dark:bg-sky-700
 }
 
 .correct-choice {
-  @apply bg-[#CEFEA8] text-[#4CAD02] border-lime-500 dark:bg-lime-500 dark:text-lime-900 dark:border-lime-900;
+  @apply bg-[#CEFEA8] text-[#4CAD02] border-lime-500 dark:bg-lime-500 dark:text-lime-900 dark:border-lime-900
 }
 
 .incorrect-choice {
-  @apply bg-[#FED6DD] text-red-500 border-red-300 dark:bg-red-400 dark:text-red-900 dark:border-red-900;
+  @apply bg-[#FED6DD] text-red-500 border-red-300 dark:bg-red-400 dark:text-red-900 dark:border-red-900
 }
 
 /* Backgrounds Start */
 .hero-bg {
-  background-image: url(""), url("./assets/endless-clouds.svg");
+  background-image: url('./assets/waves.svg'), url('./assets/endless-clouds.svg');
   background-size: 105%, 80px;
   background-position: bottom, top left;
   background-repeat: no-repeat, repeat;
 }
 
 .bg-clouds {
-  background: url("./assets/bannerBG/bg-endless-clouds.svg") repeat;
+  background: url('./assets/bannerBG/bg-endless-clouds.svg') repeat;
   background-size: 80px;
-  -webkit-mask-image: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.1)
-  );
+  -webkit-mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1));
   mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1));
 }
 
 .bg-curtain {
-  background: url("./assets/bannerBG/bg-endless-clouds.svg") repeat;
+  background: url('./assets/bannerBG/bg-curtain.svg') repeat;
   background-size: 60px;
-  -webkit-mask-image: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.1)
-  );
+  -webkit-mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1));
   mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1));
 }
 
 .bg-circles {
-  background: url("./assets/bannerBG/bg-circles.svg") repeat;
+  background: url('./assets/bannerBG/bg-circles.svg') repeat;
   background-size: 60px;
-  -webkit-mask-image: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.1)
-  );
+  -webkit-mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1));
   mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1));
 }
 
 .bg-autumn {
-  background: url("./assets/bannerBG/bg-autumn.svg") repeat;
+  background: url('./assets/bannerBG/bg-autumn.svg') repeat;
   background-size: 80px;
-  -webkit-mask-image: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.1)
-  );
+  -webkit-mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1));
   mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1));
 }
 
 .bg-connections {
-  background: url("./assets/bannerBG/bg-connections.svg") repeat;
+  background: url('./assets/bannerBG/bg-connections.svg') repeat;
   background-size: 80px;
-  -webkit-mask-image: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.1)
-  );
+  -webkit-mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1));
   mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1));
 }
 
 .bg-parkay-floor {
-  background: url("./assets/bannerBG/bg-parkay-floor.svg") repeat;
+  background: url('./assets/bannerBG/bg-parkay-floor.svg') repeat;
   background-size: 100px;
-  -webkit-mask-image: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.1)
-  );
+  -webkit-mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1));
   mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1));
 }
 
 .bg-i-like-food {
-  background: url("./assets/bannerBG/bg-i-like-food.svg") repeat;
+  background: url('./assets/bannerBG/bg-i-like-food.svg') repeat;
   background-size: 250px;
-  -webkit-mask-image: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2)
-  );
+  -webkit-mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2));
   mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2));
 }
 
 .bg-groovy {
-  background: url("./assets/bannerBG/bg-groovy.svg") repeat;
+  background: url('./assets/bannerBG/bg-groovy.svg') repeat;
   background-size: 30px;
-  -webkit-mask-image: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.1)
-  );
+  -webkit-mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1));
   mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1));
 }
 
 .bg-signal {
-  background: url("./assets/bannerBG/bg-signal.svg") repeat;
+  background: url('./assets/bannerBG/bg-signal.svg') repeat;
   background-size: 100px;
-  -webkit-mask-image: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.1)
-  );
+  -webkit-mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1));
   mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1));
 }
 
 .bg-bathroom-floor {
-  background: url("./assets/bannerBG/bg-bathroom-floor.svg") repeat;
+  background: url('./assets/bannerBG/bg-bathroom-floor.svg') repeat;
   background-size: 100px;
-  -webkit-mask-image: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2)
-  );
+  -webkit-mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2));
   mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2));
 }
 
 .bg-bamboo {
-  background: url("./assets/bannerBG/bg-bamboo.svg") repeat;
+  background: url('./assets/bannerBG/bg-bamboo.svg') repeat;
   background-size: 30px;
-  -webkit-mask-image: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.07)
-  );
+  -webkit-mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.07));
   mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.07));
 }
 
 .bg-jigsaw {
-  background: url("./assets/bannerBG/bg-jigsaw.svg") repeat;
+  background: url('./assets/bannerBG/bg-jigsaw.svg') repeat;
   background-size: 150px;
-  -webkit-mask-image: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2)
-  );
+  -webkit-mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2));
   mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2));
 }
 
 .bg-leaf {
-  background: url("./assets/bannerBG/bg-leaf.svg") repeat;
+  background: url('./assets/bannerBG/bg-leaf.svg') repeat;
   background-size: 100px;
-  -webkit-mask-image: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.1)
-  );
+  -webkit-mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1));
   mask-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1));
 }
 /* Backgrounds End */
