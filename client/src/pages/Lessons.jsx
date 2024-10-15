@@ -32,13 +32,13 @@ const Lessons = () => {
       question: "How does Tailwind work?",
       answer:
         "Tailwind works by providing a large set of utility classes that you can apply directly to HTML elements to style them.",
-      color: "#f6e8ae",
+      color: "#00a896",
     },
     {
       question: "Can I customize Tailwind?",
       answer:
         "Yes, Tailwind is fully customizable. You can customize the design system by modifying the default configuration.",
-      color: "#f6e8ae",
+      color: "#028090",
     },
   ];
   const toggleOpen = (index) => {
@@ -46,7 +46,7 @@ const Lessons = () => {
   };
   return (
     <section id="lessons" className="w-full min-h-screen p-4 md:p-8">
-      <h1 className="h1-style mb-8 ">Check Up</h1>
+      
       {/* Banner */}
       <div className="mb-8 banner-container-style text-white text-shadow bg-gradient-to-r from-[#028090] to-[#00A896]">
         <div className="relative p-8 z-10">
@@ -63,31 +63,32 @@ const Lessons = () => {
         ))}
       </div> */}
 
-      <div className="w-full   mt-10 justify-center">
-        {faqData.map((faq, index) => (
-          <div
-            key={index}
-            className={`${
-              faqData.color == "#02C39A" ? "bg-[#02C39A]" : ""
-            } w-[630px] md:w-full py-2 px-4 h-20  shadow-md cursor-pointer transition-transform duration-300 ease-in-out transform ${
-              openIndex === index ? "" : "hover:-translate-y-1"
-            }`}
-            onClick={() => toggleOpen(index)}
-          >
-            {/* Question */}
-            <h3 className="text-lg font-bold text-gray-800">{faq.question}</h3>
+<div className="w-full mt-10 flex flex-col justify-center ">
+  {faqData.map((faq, index) => (
+    <div
+      key={index}
+      className={`w-[630px] md:w-full py-2 px-4 h-20 shadow-md cursor-pointer transition-transform duration-300 ease-in-out transform ${
+        openIndex === index ? "h-24" : "hover:-translate-y-1 "
+      }`}
+      style={{ backgroundColor: faq.color }}  // Apply dynamic background color here
+      onClick={() => toggleOpen(index)}
+    >
+      {/* Question */}
+      <h3 className="text-lg text-white font-bold text-gray-800">{faq.question}</h3>
 
-            {/* Answer */}
-            {openIndex === index && (
-              <div className="mt-2 text-gray-600">
-                <p>{faq.answer}</p>
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
+      {/* Answer */}
+      {openIndex === index && (
+        <div className="mt-2 text-gray-600 ">
+          <p className="text-white">{faq.answer}</p>
+        </div>
+      )}
+    </div>
+  ))}
+</div>
+
+
       <div className="w-full   mt-10 justify-center flex flex-row space-x-10 ">
-        <div className="bg-[#CCD5AE] h-56 w-56 p-3 rounded-lg">
+        <div className="bg-[#00A896] h-56 md:h-64 w-56 p-3 rounded-lg">
           <img src={stressbg} className="mb-4 rounded-lg"></img>
           <Link
             to={`/stress`}
@@ -96,7 +97,7 @@ const Lessons = () => {
             Stress
           </Link>
         </div>
-        <div className="bg-[#CCD5AE] h-56 w-56 p-3 rounded-lg">
+        <div className="bg-[#02c39a] h-56 w-56 md:h-64 p-3 rounded-lg">
           <img src={depressionbg} className="mb-4 rounded-lg"></img>
           <Link
             to={`/stress`}
@@ -105,7 +106,7 @@ const Lessons = () => {
             Depressed
           </Link>
         </div>
-        <div className="bg-[#CCD5AE] h-56 w-56 p-3 rounded-lg">
+        <div className="bg-[#F0F3BD] h-56 md:h-64 w-56 p-3 rounded-lg">
           <img src={anxietybg} className="mb-4 rounded-lg"></img>
           <Link
             to={`/stress`}
