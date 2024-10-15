@@ -1,14 +1,14 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 // import useSelector and useDispatch hooks from react-redux to access state and dispatch actions
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from "react-redux";
 // import darkmode action
-import { TOGGLE_DARKMODE } from '../features/darkMode/darkModeSlice';
+import { TOGGLE_DARKMODE } from "../features/darkMode/darkModeSlice";
 
-import logo from '../assets/logo.png';
-import logoText from '../assets/SakuraStudyTextBlack.svg';
-import logoTextDarkMode from '../assets/SakuraStudyTextWhite.svg';
-import { HiOutlineMoon, HiOutlineSun } from 'react-icons/hi';
+import logo from "../assets/logo.png";
+import logoText from "../assets/SakuraStudyTextBlack.svg";
+import logoTextDarkMode from "../assets/SakuraStudyTextWhite.svg";
+import { HiOutlineMoon, HiOutlineSun } from "react-icons/hi";
 
 const Header = () => {
   // get darkmode state from store
@@ -24,13 +24,9 @@ const Header = () => {
           to="/"
           className="flex items-center gap-3 hover:opacity-70 custom-transition"
         > */}
-          <img
-            src={logo}
-            alt="Logo"
-            className="w-20 h-20"
-          />
-          {/* Show dark mode logo if dark mode is enabled */}
-          {/* {darkMode ? (
+        <img src={logo} alt="Logo" className="w-20 h-20" />
+        {/* Show dark mode logo if dark mode is enabled */}
+        {/* {darkMode ? (
             <img
               src={logoTextDarkMode}
               alt="Sakura Study Text Logo"
@@ -53,13 +49,9 @@ const Header = () => {
             onClick={() => dispatch(TOGGLE_DARKMODE())}
           >
             {darkMode ? (
-              <HiOutlineSun
-                className="w-6 h-6"
-              />
+              <HiOutlineSun className="w-6 h-6" />
             ) : (
-              <HiOutlineMoon
-                className="w-6 h-6"
-              />
+              <HiOutlineMoon className="w-6 h-6" />
             )}
           </button>
           <Link
@@ -70,7 +62,7 @@ const Header = () => {
           </Link>
           <Link
             to="/signup"
-            className="py-2 px-4 text-white bg-primary hover:bg-primary-shade rounded-xl"
+            className="py-2 px-4 text-white bg-[#028090] hover:bg-[#F0F3BD] hover:text-[#028090] rounded-xl"
           >
             Sign up
           </Link>
