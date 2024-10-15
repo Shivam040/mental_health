@@ -73,7 +73,7 @@ const Report = ({data1,data2,data3}) => {
       <h1 className="h1-style mb-8">Report</h1>
 
       {/* Banner */}
-      <div className="mb-8 banner-container-style text-white text-shadow bg-gradient-to-r from-green-600 to-green-800">
+      <div className="mb-8 banner-container-style text-white text-shadow bg-gradient-to-r from-[#05668D] to-[#00A896]">
         <div className="relative p-8 z-10">
           <h2 className="banner-heading mb-3">Your Health..</h2>
           <p className="text-lg">Be the best.</p>
@@ -88,7 +88,7 @@ const Report = ({data1,data2,data3}) => {
           {diseaseList.map((item) => (
             <div
               key={item.id}
-              className="bg-green-600 h-48 rounded-md flex flex-row w-56 md:w-72"
+              className=" bg-gradient-to-r from-[#028090] to-[#00A896] shadow-2xl h-48 rounded-md flex flex-row w-56 md:w-72"
             >
               <div className="h-full w-1/2">
                 <img src={image1} alt="s" className="h-12 w-12 mt-12 ml-5" />
@@ -107,7 +107,7 @@ const Report = ({data1,data2,data3}) => {
           {diseaseList.map((item) => (
             <div
               key={item.id}
-              className="bg-green-600 h-48 rounded-md flex flex-row w-56 md:w-72"
+              className="bg-gradient-to-r from-[#028090]  to-[#00A896] shadow-2xl h-48 rounded-md flex flex-row w-56 md:w-72"
             >
               <div className="h-full w-1/2">
                 <img src={image1} alt="s" className="h-12 w-12 mt-12 ml-5" />
