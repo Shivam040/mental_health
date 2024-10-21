@@ -8,6 +8,12 @@ import PieChart from "../components/PieChart.jsx";
 import image1 from "../assets/loneliness.png";
 import { ListItem } from "@mui/material";
 import { useState } from "react";
+import anxiety from "../assets/anxity.png"
+import depression from "../assets/depression1.png"
+import bipolar from "../assets/bipolar.png"
+import Personality from "../assets/Personality-disorder.png"
+import stress from "../assets/headache.png"
+import normal from "../assets/normal.png"
 const Report = ({data1,data2,data3}) => {
   // If the user is not logged in, redirect to the login page
   if (!Auth.loggedIn()) return <Navigate to="/login" />;
@@ -34,18 +40,44 @@ const Report = ({data1,data2,data3}) => {
         return "";
     }
   };
+  const maxval = Math.max(data2[2],data2[3])
+  console.log(maxval)
   const diseaseList = [
     {
       id: "Anxiety",
-      value: 500,
+      value: data2[0],
+      label: "Anxiety",
+      image:anxiety
+    },
+    {
+      id: "Normal",
+      value: data2[1],
+      label: "Normal",
+      image:normal
     },
     {
       id: "Depression",
-      value: 500,
+      value: maxval,
+      label: "Depression",
+      image:depression
+    },
+    {
+      id: "Stress",
+      value: data2[4],
+      label: "Stress",
+      image:stress
     },
     {
       id: "Bipolar Disorder",
-      value: 500,
+      value: data2[5],
+      label: "Bipolar Disorder",
+      image:bipolar
+    },
+    {
+      id: "Personality Disorder",
+      value: data2[6],
+      label: "Personality Disorder",
+      image:Personality
     },
   ];
   const dummyData = [
@@ -55,9 +87,16 @@ const Report = ({data1,data2,data3}) => {
     { id: "Normal", label: "Normal", value: 150 },
     { id: "Stress", label: "okay", value: 100 },
   ];
+  const valSum = data2.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
   const singleData = [
-    { id: "Anxiety", label: "Anxiety", value: 500 },
-    { id: "", label: "Normal", value: 300 },
+    
+    [{
+      id: "Anxiety",label:"Anxiety",value:data2[0]},{id: "",label:"rest",value:valSum-data2[0]}],[{
+      id:"Normal",label:"Normal",value:data2[1]},{id: "",label:"rest",value:valSum-data2[1]}],[{
+      id: "Depression",label:"Depression",value:maxval},{id: "",label:"rest",value:valSum-maxval}],[{
+      id: "Stress",label:"Stress",value:data2[4]},{id: "",label:""}],[{
+      id: "Bipolar Disorder",label:"Bipolar Disorder",value:data2[5]},{id: "",label:"rest",value:valSum-data2[5]}],
+    [{id: "Personality Disorder",label:"Personality Disorder",value:data2[6]},{id: "",label:"rest",value:valSum-data2[6]}]
   ];
 
   const illness = ["anxiety","Normal","Depresson","Bipolar","Polar","Stress","Panic"]
@@ -82,49 +121,49 @@ const Report = ({data1,data2,data3}) => {
       </div>
 
       {/* Leaderboard table */}
-      <div className="box-container-style  ">
-        <h2 className="text-xl font-bold mb-4">Analytics</h2>
-        <div className="w-full h-56 flex flex-col md:flex-row m-4 md:space-x-2 lg:space-x-14 justify-center md:space-y-0 space-y-3">
-          {diseaseList.map((item) => (
-            <div
-              key={item.id}
-              className="bg-green-600 h-48 rounded-md flex flex-row w-56 md:w-72"
-            >
-              <div className="h-full w-1/2">
-                <img src={image1} alt="s" className="h-12 w-12 mt-12 ml-5" />
-                <h2 className="text-white font-extrabold ml-5 mt-8">
-                  {item.id}
-                </h2>
-              </div>
-              <div className="h-full w-1/2 flex justify-center items-center">
-              <div></div>
-                <PieChart dummyData={singleData} />
-              </div>
-            </div>
-          ))}
-        </div>
-        <div className="w-full h-56 flex flex-col md:flex-row m-4 md:space-x-2 lg:space-x-14 justify-center md:space-y-0 space-y-3">
-          {diseaseList.map((item) => (
-            <div
-              key={item.id}
-              className="bg-green-600 h-48 rounded-md flex flex-row w-56 md:w-72"
-            >
-              <div className="h-full w-1/2">
-                <img src={image1} alt="s" className="h-12 w-12 mt-12 ml-5" />
-                <h2 className="text-white font-extrabold ml-5 mt-8">
-                  {item.id}
-                </h2>
-              </div>
-              <div className="h-full w-1/2 flex justify-center items-center">
-                <PieChart dummyData={singleData} />
-              </div>
-            </div>
-          ))}
-        </div>
-
+      {<div className="box-container-style  ">
+       { data1 ? (<div><h2 className="text-3xl font-bold mb-4">Analytics</h2>
+        <p className="text-xl font-bold">You may Suffer From - {data1}</p></div>) : (<div className="flex justify-center items-center"><p className="text-3xl ">No Data Exist Please Take A Test</p></div>)}
         <div className="h-96">
-          <PieChart dummyData={dummyData}></PieChart>
+          <PieChart dummyData={diseaseList}></PieChart>
         </div>
+        <div className="flex flex-wrap h-auto justify-center space-between items-center space-x-4 gap-y-5">
+                {diseaseList.map((item,index) => (
+                item.value ? ( <div
+                    key={item.id}
+                    className="bg-green-600 h-48 rounded-md flex flex-row w-1/3 min-w-[250px]"  // Adjust width and min-width for wrapping
+                  >
+      <div className="h-full w-fit">
+        <img src={item.image} alt="s" className="h-12 w-12 mt-12 ml-5" />
+        <h2 className="text-white font-extrabold ml-2 mt-8">{item.id}</h2>
+      </div>
+      <div className="h-full w-full flex justify-center items-center">
+        <PieChart dummyData={singleData[index]} />
+      </div>
+    </div>) : <div></div>
+  ))}
+</div>
+
+        {/* <div className="w-full h-56 flex flex-col md:flex-row m-4 md:space-x-2 lg:space-x-14 justify-center md:space-y-0 space-y-3">
+          {diseaseList.map((item) => (
+            <div
+              key={item.id}
+              className="bg-green-600 h-48 rounded-md flex flex-row w-56 md:w-72"
+            >
+              <div className="h-full w-1/2">
+                <img src={image1} alt="s" className="h-12 w-12 mt-12 ml-5" />
+                <h2 className="text-white font-extrabold ml-5 mt-8">
+                  {item.id}
+                </h2>
+              </div>
+              <div className="h-full w-1/2 flex justify-center items-center">
+                <PieChart dummyData={singleData} />
+              </div>
+            </div>
+          ))}
+        </div> */}
+
+        
         <div className="flex flex-col">
           {loading && (
             <AiOutlineLoading className="animate-spin h-12 w-12 mx-auto" />
@@ -149,23 +188,21 @@ const Report = ({data1,data2,data3}) => {
             </div>
           ))} */}
         </div>
-        <div>
+        {/* <div>
           <p>Illness Predicted by  Model : {data1}</p>
           <p>Model's Confidence Score For Each Class : </p>
           {data2.map((value, index) => (
                 <div key={index}>{illness[index]} = {value} </div> 
                 ))}
 
-        </div>
+        </div> */}
         <div
-            className="fixed bottom-5 right-5 p-3 bg-blue-500 text-white rounded-full shadow-lg cursor-pointer hover:bg-blue-600 transition duration-300"
+            className="fixed bottom-5 right-5 p-5  bg-blue-500 text-white rounded-full shadow-lg cursor-pointer hover:bg-blue-600 transition duration-300"
             onClick={handleClick}
         >
-            {/* You can replace the text with an actual icon */}
-            
-           <p>Ask AI</p>
+           <p >Ask AI</p>
         </div>
-      </div>
+      </div>}
     </section>
   );
 };

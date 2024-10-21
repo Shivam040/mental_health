@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { Link, Navigate } from 'react-router-dom';
-import logo from '../assets/SakuraStudyLogo.svg';
+import logo from '../assets/logo.png';
 import { HiEye, HiEyeOff } from 'react-icons/hi';
 import { FaExclamationCircle } from 'react-icons/fa';
 import { AiOutlineLoading } from 'react-icons/ai';
@@ -61,7 +61,7 @@ const Login = () => {
         <img
           src={logo}
           alt="Sakura Study Logo"
-          className="w-12 h-12 mx-auto mb-2"
+          className="w-24 h-24 mx-auto mb-2"
         />
         <h1 className="text-2xl font-bold mb-6 text-center">Log in</h1>
         {/* Fields Container */}
@@ -121,7 +121,8 @@ const Login = () => {
 
         {/* Submit Button */}
         <button
-          className="w-full mt-6 py-3 px-6 bg-primary hover:bg-primary-shade text-white font-bold rounded-xl"
+         className="w-full mt-6 py-3 px-6 bg-[#00a896] hover:bg-[#02c39a] text-white font-bold rounded-xl"
+
           type="submit"
         >
           {loading ? <AiOutlineLoading className="animate-spin h-6 w-6 mx-auto" /> : 'Log in'}
@@ -131,7 +132,8 @@ const Login = () => {
           Don't have an account?{' '}
           <Link
             to="/signup"
-            className="font-bold text-red-500 hover:text-primary-shade hover:underline"
+            className="font-bold text-[#028090]hover:text-primary-shade hover:underline"
+
           >
             Sign up
           </Link>

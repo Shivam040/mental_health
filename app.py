@@ -36,7 +36,9 @@ def predict():
         # Get input data from the frontend
         data = request.json
         user_input = data.get('input')
-
+        if not user_input:
+            return jsonify({'error': 'Input text is required'}), 400
+        
         # Process input with the model pipeline
         values = nlp(user_input, truncation=True, padding=True)
         values_tensor = torch.tensor(values)
@@ -68,6 +70,7 @@ def ask():
         data = request.json
         user_input = data.get('input')
 
+        print(user_input)
         if not user_input:
             return jsonify({'error': 'Input text is required'}), 400
         

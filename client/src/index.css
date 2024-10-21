@@ -41,7 +41,7 @@ html {
 }
 
 .sidebar-btn.active {
-  @apply bg-red-100 border-2 border-red-300 text-red-500 dark:bg-transparent dark:text-red-400 dark:border-red-400 dark:bg-slate-700;
+  @apply bg-[#00a897ad] border-2 border-[#02c39a] text-white dark:bg-transparent dark:text-black dark:border-[#02c39a] dark:bg-slate-300;
 }
 
 .sidebar-text {
@@ -53,8 +53,8 @@ html {
 }
 
 .footer-bg-dark {
-  @apply bg-slate-800 text-gray-300;
-}
+    @apply bg-[#028090] text-gray-300;
+  }
 
 .tab-style {
   @apply w-full py-2 rounded-t-xl border-b-4 border-transparent hover:bg-gray-200/75 dark:hover:bg-slate-700;
@@ -158,10 +158,10 @@ html {
 
 /* Backgrounds Start */
 .hero-bg {
-  background-image: url('./assets/waves.svg'), url('./assets/endless-clouds.svg');
+  background-image: url(""), url("./assets/endless-clouds.svg");
   background-size: 105%, 80px;
   background-position: bottom, top left;
-  background-repeat: no-repeat, repeat;
+  background-repeat: no-repeat, repeat;
 }
 
 .bg-clouds {

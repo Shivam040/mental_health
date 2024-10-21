@@ -71,7 +71,7 @@ const Signup = () => {
         <img
           src={logo}
           alt="Sakura Study Logo"
-          className="w-12 h-12 mx-auto mb-2"
+          className="w-24 h-24 mx-auto mb-2"
         />
         <h1 className="text-2xl font-bold mb-6 text-center">Sign up</h1>
         {/* Fields Container */}
@@ -147,7 +147,8 @@ const Signup = () => {
 
         {/* Submit Button */}
         <button
-          className="w-full mt-6 py-3 px-6 bg-primary hover:bg-primary-shade text-white font-bold rounded-xl"
+         className="w-full mt-6 py-3 px-6 bg-[#00a896] hover:bg-[#02c39a] text-white font-bold rounded-xl"
+
           type="submit"
         >
           {loading ? <AiOutlineLoading className="animate-spin h-6 w-6 mx-auto" /> : 'Create account'}
@@ -157,7 +158,8 @@ const Signup = () => {
           Already have an account?{' '}
           <Link
             to="/login"
-            className="font-bold text-red-500 hover:text-primary-shade hover:underline"
+            className="font-bold text-[#00a896] hover:text-green-300 hover:underline"
+
           >
             Log in
           </Link>
